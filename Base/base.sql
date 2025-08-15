@@ -1,0 +1,19 @@
+create database jirama;
+
+CREATE TABLE admin (
+    id SERIAL PRIMARY KEY,
+    utilisateur VARCHAR(100) NOT NULL,
+    password VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE mois (
+    id SERIAL PRIMARY KEY,
+    mois VARCHAR(20) NOT NULL
+);
+
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    users VARCHAR(20) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
