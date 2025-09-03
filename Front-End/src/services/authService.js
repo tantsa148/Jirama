@@ -15,6 +15,7 @@ export async function login(username, password) {
 
   const token = await response.text(); // si ton backend renvoie juste le JWT
   localStorage.setItem("jwtToken", token);
+    console.log("Token reçu :", token);
   return token;
 }
 

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { login } from "../services/authService";
-import { Link } from "react-router-dom"; // <- import Link
+import { Link, useNavigate } from "react-router-dom";
 import "./LoginPage.css";
 
 function LoginPage() {
@@ -8,6 +8,7 @@ function LoginPage() {
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
   const [success, setSuccess] = useState(false);
+  const navigate = useNavigate(); // hook pour naviguer
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -15,6 +16,9 @@ function LoginPage() {
       await login(username, password);
       setMessage("Connexion réussie !");
       setSuccess(true);
+
+      // Redirection vers le dashboard
+      navigate("/dashboard");
     } catch (error) {
       setMessage(error.message);
       setSuccess(false);
@@ -55,7 +59,10 @@ function LoginPage() {
         {/* Lien pour l'inscription */}
         <div style={{ textAlign: "center", marginTop: "15px" }}>
           <span>Pas encore de compte ? </span>
-          <Link to="/register" style={{ color: "#007bff", textDecoration: "none" }}>
+          <Link
+            to="/register"
+            style={{ color: "#007bff", textDecoration: "none" }}
+          >
             S'inscrire
           </Link>
         </div>
