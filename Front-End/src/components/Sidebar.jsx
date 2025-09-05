@@ -1,7 +1,7 @@
 
 import "./Sidebar.css"; // <-- ici tu importes le CSS
 import { NavLink, useNavigate } from "react-router-dom";
-export default function Sidebar({ customerCount = 0 }) {
+export default function Sidebar({ usersCount = 0 , customerCount = 0}) {
     const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -32,12 +32,12 @@ export default function Sidebar({ customerCount = 0 }) {
       <ul className="nav flex-column">
         <li className="nav-item">
           <NavLink
-            to="/app/Import"
+            to="/users"
             className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}
           >
-            <i className="fas fa-file-export"></i>
-            Import
-            <span className="badge bg-success ms-2">{customerCount}</span>
+            <i className="fas fa-users"></i>
+            Users
+            <span className="badge bg-success ms-2">{usersCount}</span>
           </NavLink>
         </li>
         {/* autres éléments du menu */}
