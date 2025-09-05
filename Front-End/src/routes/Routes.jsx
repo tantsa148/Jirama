@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import LoginPage from "../pages/LoginPage";
 import RegisterPage from "../pages/RegisterPage";
 import Dashboard from "../pages/DashboardPage";
+import User from "../pages/UsersPage"
 import MainLayout from "../layouts/MainLayout";
 import AuthLayout from "../layouts/AuthLayout";
 import PrivateRoute from "../components/PrivateRoute";
@@ -35,6 +36,16 @@ function AppRoutes() {
           <PrivateRoute>
             <MainLayout>
               <Dashboard />
+            </MainLayout>
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/users"
+        element={
+          <PrivateRoute>
+            <MainLayout>
+              <User />
             </MainLayout>
           </PrivateRoute>
         }

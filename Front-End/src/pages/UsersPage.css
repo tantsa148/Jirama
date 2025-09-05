@@ -1,0 +1,29 @@
+/* UserList.css */
+
+/* Conteneur principal */
+.userlist-container {
+  margin-top: 1.5rem;
+}
+
+/* Header de la card */
+.userlist-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+/* Bouton Ajouter */
+.userlist-add-button {
+  display: flex;
+  align-items: center;
+}
+
+.userlist-add-button i {
+  margin-right: 5px;
+}
+
+/* Tableau */
+.userlist-table {
+  margin-top: 1rem;
+}
