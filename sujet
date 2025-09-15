@@ -2,3 +2,13 @@ porjet consistant a facturer la consommation d'electricite d'un batiment
 -Spring Boot
 -React 
 
+consommation api
+{
+  "consommation": 200,
+  "mois": {
+    "id": 9
+  },
+  "user": {
+    "id": 5
+  }
+}
